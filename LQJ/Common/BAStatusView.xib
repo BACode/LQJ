@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BAStatusView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="227"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E0B-mF-HfS">
+                    <rect key="frame" x="0.0" y="39" width="320" height="130"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jts_empty_data.png" translatesAutoresizingMaskIntoConstraints="NO" id="F66-QG-bDb">
+                            <rect key="frame" x="105.5" y="-15" width="109" height="109"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无相关投资记录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LsA-zD-CXF">
+                            <rect key="frame" x="15" y="109" width="290" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="Nwp-EV-PNW"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="LsA-zD-CXF" firstAttribute="top" secondItem="F66-QG-bDb" secondAttribute="bottom" constant="15" id="46R-ay-XDf"/>
+                        <constraint firstItem="LsA-zD-CXF" firstAttribute="leading" secondItem="E0B-mF-HfS" secondAttribute="leading" constant="15" id="8fr-aM-q8N"/>
+                        <constraint firstAttribute="bottom" secondItem="LsA-zD-CXF" secondAttribute="bottom" id="An4-dw-Jg7"/>
+                        <constraint firstAttribute="trailing" secondItem="LsA-zD-CXF" secondAttribute="trailing" constant="15" id="fEM-35-JoM"/>
+                        <constraint firstAttribute="height" constant="130" id="kHf-ER-i4G"/>
+                        <constraint firstAttribute="centerX" secondItem="LsA-zD-CXF" secondAttribute="centerX" id="nPy-qc-Fsq"/>
+                        <constraint firstAttribute="centerX" secondItem="F66-QG-bDb" secondAttribute="centerX" id="oWo-da-urG"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEn-iD-qvL">
+                    <rect key="frame" x="110" y="184" width="99" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="Xt6-rc-VU5"/>
+                        <constraint firstAttribute="width" constant="99" id="jAb-UQ-22n"/>
+                    </constraints>
+                    <state key="normal" title="点击刷新">
+                        <color key="titleColor" red="0.96078431372549022" green="0.32156862745098036" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="E0B-mF-HfS" secondAttribute="trailing" id="Bv0-Mt-f6t"/>
+                <constraint firstItem="rEn-iD-qvL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="DO7-3A-yKc"/>
+                <constraint firstAttribute="centerX" secondItem="E0B-mF-HfS" secondAttribute="centerX" id="fLE-pO-koZ"/>
+                <constraint firstAttribute="centerY" secondItem="E0B-mF-HfS" secondAttribute="centerY" constant="9.5" id="gCt-la-ghq"/>
+                <constraint firstItem="rEn-iD-qvL" firstAttribute="top" secondItem="E0B-mF-HfS" secondAttribute="bottom" constant="15" id="m8L-YQ-vaC"/>
+                <constraint firstItem="E0B-mF-HfS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pT6-2K-Wh9"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="containerView" destination="E0B-mF-HfS" id="KcP-y8-zgD"/>
+                <outlet property="contentLabel" destination="LsA-zD-CXF" id="5Yx-N2-vvU"/>
+                <outlet property="imageView" destination="F66-QG-bDb" id="OXy-me-TPd"/>
+                <outlet property="tryButton" destination="rEn-iD-qvL" id="eDF-DM-Eri"/>
+            </connections>
+            <point key="canvasLocation" x="321" y="64.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="jts_empty_data.png" width="109" height="109"/>
+    </resources>
+</document>
