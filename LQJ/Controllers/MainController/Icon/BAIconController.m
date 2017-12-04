@@ -14,10 +14,15 @@
 
 @implementation BAIconController
 
+- (void)viewWillAppear:(BOOL)animated{
+    // 显示tabbar
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     
 }
 

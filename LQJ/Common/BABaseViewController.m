@@ -88,10 +88,7 @@
 {
     [super viewDidAppear:animated];
    
-    //隐藏底部tabBar
-    if (![self.rdv_tabBarController isTabBarHidden]) {
-        [self.rdv_tabBarController setTabBarHidden:YES animated:NO];
-    }
+   
 }
 
 - (void)viewWillDisappear:(BOOL)animated{

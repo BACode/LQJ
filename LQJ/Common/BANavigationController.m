@@ -28,6 +28,7 @@
     self = [super initWithRootViewController:rootViewController];
     if (self) {
         self.canDragBack = YES;
+        self.hidesBottomBarWhenPushed = YES;
         self.navigationBar.translucent = NO;
         [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
         [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];

@@ -7,12 +7,17 @@
 //
 
 #import "AppDelegate.h"
-#import "BAMainController.h"
-#import "BASlideMenu.h"
 #import "BALeftController.h"
+#import "BAGuideController.h"
+#import "BAViewControllerHelper.h"
+
+/////
+#import "BASideViewController.h"
+#import "UIViewController+SideCategory.h"
+
 
 @interface AppDelegate ()
-
+@property (nonatomic, strong) UITabBarController *tabBarController;
 @end
 
 @implementation AppDelegate
@@ -25,23 +30,32 @@
     self.window = [[UIWindow alloc] initWithFrame:ScreenRect];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    //主界面
-    BAMainController *mainVC = [[BAMainController alloc] init];
-    //配置NavigationBar
-    UINavigationController *rootNav = [[UINavigationController alloc] initWithRootViewController:mainVC];
-    [rootNav.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbarBackImage"] forBarMetrics:UIBarMetricsDefault];
-    rootNav.navigationBar.tintColor = [UIColor whiteColor];
-    [rootNav.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
-    //左侧菜单
-    BALeftController *leftVC = [[BALeftController alloc] init];
-    //右侧菜单
-//    BARightController *rightVC = [[BARightController alloc] init];
-    //创建滑动菜单
-    BASlideMenu *slideMenu = [[BASlideMenu alloc] initWithRootViewController:rootNav];
-    //设置左右菜单
-    slideMenu.leftViewController = leftVC;
-//    slideMenu.rightViewController = rightVC;
-    self.window.rootViewController = slideMenu;
+    
+    //创建bool类型对象来判断是否显示操作指南
+    BOOL showGuide = [UserDefaults boolForKey:@"showGuide"];
+    
+    if (showGuide == NO) {
+
+        //没有显示操作指南，则让其显示
+        self.window.rootViewController = [[BAGuideController alloc] init];
+        //获取idfa，调用接口同时将idfa数据传递给后台
+
+
+        //写数据
+        [UserDefaults setBool:YES forKey:@"showGuide"];
+
+        //将数据同步到本地的文件中
+        [UserDefaults synchronize];
+    } else {
+        //主VC
+        self.tabBarController = [BAViewControllerHelper createTabBarController];
+
+        // 侧拉VC
+        BALeftController *leftViewController = [[BALeftController alloc] init];
+
+        // 添加BASideViewController为rootvc
+        self.window.rootViewController = [[BASideViewController alloc] initWithSideVC:leftViewController currentVC:self.tabBarController];
+    }
     
     // display content
     [self.window makeKeyAndVisible];

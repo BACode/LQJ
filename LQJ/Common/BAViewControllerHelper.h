@@ -10,6 +10,6 @@
 
 @interface BAViewControllerHelper : NSObject
 
-+(RDVTabBarController *)createTabBarController;
++(UITabBarController *)createTabBarController;
 
 @end

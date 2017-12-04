@@ -13,9 +13,6 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #import "Common.h"
 #import "Macro.h"
-#import "RDVTabBar.h"
-#import "RDVTabBarItem.h"
-#import "RDVTabBarController.h"
 #import "BABaseViewController.h"
 #import "Common.h"
 #import "BAHelper.h"

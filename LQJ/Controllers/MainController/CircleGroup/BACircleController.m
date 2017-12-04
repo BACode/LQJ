@@ -14,10 +14,14 @@
 
 @implementation BACircleController
 
+- (void)viewWillAppear:(BOOL)animated{
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     
 }
 

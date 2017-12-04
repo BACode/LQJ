@@ -7,12 +7,14 @@
 //
 
 #import "BALeftController.h"
-#import "BASlideMenu.h"
+#import "BASideViewController.h"
+#import "UIViewController+SideCategory.h"
 
 @interface BALeftController ()
 {
     UIImageView *_imageView;
 }
+
 @end
 
 @implementation BALeftController
