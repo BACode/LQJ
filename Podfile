@@ -15,6 +15,10 @@ target 'LQJ' do
   target 'LQJUITests' do
     inherit! :search_paths
     # Pods for testing
+    
+    # 引入网络框架
+    pod 'AFNetworking', '~> 3.1.0'
+    pod 'Masonry'
   end
 
 end
